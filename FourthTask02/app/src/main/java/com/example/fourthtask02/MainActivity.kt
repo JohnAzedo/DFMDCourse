@@ -6,40 +6,36 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity(), ButtonFragment.IncrementListener{
-    private var counterFragment1: CounterFragment = CounterFragment()
-    private var counterFragment2: CounterFragment = CounterFragment()
+    private var counterFragment1: CounterFragment? = null
+    private var counterFragment2: CounterFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val buttonFragment: Fragment = ButtonFragment()
-        val fragmentTransaction = this.supportFragmentManager.beginTransaction()
+        val sm = supportFragmentManager
+        val fm = sm.beginTransaction()
 
-        if(savedInstanceState != null){
-            counterFragment1 = supportFragmentManager.getFragment(savedInstanceState, "frag1") as CounterFragment
-            counterFragment2 = supportFragmentManager.getFragment(savedInstanceState, "frag2") as CounterFragment
+        counterFragment1 = sm.findFragmentById(R.id.frag_counter_01) as CounterFragment?
+        counterFragment2 = sm.findFragmentById(R.id.frag_counter_02) as CounterFragment?
+
+        if(counterFragment1 == null || counterFragment2==null){
+            counterFragment1 = CounterFragment()
+            counterFragment2 = CounterFragment()
         }
 
-        fragmentTransaction.replace(R.id.frag_counter_01, counterFragment1)
-        fragmentTransaction.replace(R.id.frag_counter_02, counterFragment2)
-        fragmentTransaction.replace(R.id.frag_button, buttonFragment)
-        fragmentTransaction.commit()
-
-
+        fm.replace(R.id.frag_counter_01, counterFragment1!!)
+        fm.replace(R.id.frag_counter_02, counterFragment2!!)
+        fm.add(R.id.frag_button, buttonFragment)
+        fm.commit()
     }
 
     override fun orderIncrement() {
-        counterFragment1.increment()
-        counterFragment2.increment()
+        counterFragment1?.increment()
+        counterFragment2?.increment()
     }
 
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        supportFragmentManager.putFragment(outState, "frag1", counterFragment1)
-        supportFragmentManager.putFragment(outState, "frag2", counterFragment2)
-    }
 
 
 
