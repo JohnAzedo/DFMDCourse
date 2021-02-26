@@ -1,4 +1,4 @@
-# Development for Mobile Devices
+# Development for Mobile Devices at UFRN
 
 Using Kotlin to develop for android devices.
 
