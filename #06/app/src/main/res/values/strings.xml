@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SixthTask</string>
+
+    <string name="combos_gasolina">Gasolina</string>
+    <string name="combos_etanol">Etanol</string>
+    <string name="combos_flex">Flex</string>
+    <string name="combos_nao_informado">Não informado</string>
+</resources>

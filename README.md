@@ -11,3 +11,4 @@ Code | Description
 `#03` | AsyncTask
 `#04` | Fragments
 `#05` | ListFragment
+`#06` | Custom adapter and ViewHolder
