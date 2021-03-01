@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FifthActivity</string>
+    <string-array name="alimentos_nome">
+        <item>Arroz</item>
+        <item>Feijão</item>
+        <item>Mandioca</item>
+        <item>Frango</item>
+        <item>Biscoito</item>
+        <item>Leite condensado</item>
+    </string-array>
+
+    <string-array name="alimentos_preco">
+        <item>4.5</item>
+        <item>9.3</item>
+        <item>5.2</item>
+        <item>3.5</item>
+        <item>0.4</item>
+        <item>4000</item>
+    </string-array>
+</resources>
