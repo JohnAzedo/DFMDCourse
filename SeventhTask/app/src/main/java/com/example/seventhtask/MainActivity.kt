@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initRecyclerView();
+        initRecyclerView()
         fabAdd.setOnClickListener{
             val message = Message(edtTitle.text.toString(), edtText.text.toString())
             messages.add(message)
