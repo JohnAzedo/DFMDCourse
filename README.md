@@ -12,3 +12,4 @@ Code | Description
 `#04` | Fragments
 `#05` | ListFragment
 `#06` | Custom adapter and ViewHolder
+`#07` | RecyclerView
